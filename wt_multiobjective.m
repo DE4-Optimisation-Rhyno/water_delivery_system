@@ -9,7 +9,7 @@ pump_shortlist = csvread('pump_values_shortlist2.csv'); % pump mass, flow rate, 
 % Parameters
 g = 9.81;
 mu = 0.00089;
-rho_water = 1000;
+rho = 1000;
 ep = 0.0001525;
 
 % Testing Variables
