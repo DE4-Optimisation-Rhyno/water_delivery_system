@@ -36,7 +36,7 @@ nonlincon = @wt_nlcon;
 
 objective = @(x) -sin(2.*x(2)).*-mu.*(H-20.*x(1).*sin(x(2))-((x(3).*g)./(2.*pi.*x(1)))-((1./(-1.8.*log10((ep./(7.4.*x(1))).^1.1 + ((241.*x(1))./(25000.*x(3)))))).^2.*mu.*20.*x(1).*x(3).^2)./(pi.^2.*x(1).*3.*g));
 
-%{
+
 %% Optimisation using interior points algorithm
 x_ip = fmincon(objective,x0,A,b,Aeq,beq,lb,ub,nonlincon)
 
@@ -62,7 +62,7 @@ rng default
 gs = GlobalSearch;
 problem = createOptimProblem('fmincon','x0',x0,'objective',objective,'lb',lb,'ub',ub,'nonlcon',nonlincon)
 x_gs = run(gs,problem)
-toc
+
 %% Non-linear Constraints 
 
 function [c,ceq] = wt_nlcon(x)
